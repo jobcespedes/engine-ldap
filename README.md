@@ -14,6 +14,7 @@ Requirements
 Role Variables
 --------------
 
+- Define an `ovirt_engine_ldap_setup` dictionary
 - See [`defaults/main.yml`](defaults/main.yml).
 
 Dependencies
