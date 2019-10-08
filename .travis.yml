@@ -6,6 +6,7 @@ services:
 env:
   global:
     - ROLE_NAME: ovirt.engine-ldap
+    - GALAXY_ROLE_NAME: jobcespedes.ovirt.engine-ldap
   matrix:
     - MOLECULE_DISTRO: centos7
 
