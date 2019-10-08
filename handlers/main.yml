@@ -1,0 +1,5 @@
+---
+- name: restart engine
+  service:
+    name: ovirt-engine
+    state: restarted

@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+[environment:default]
+OVAAALDAP_LDAP/profile=str:{{ ovirt_engine_ldap_setup.profile }}
+OVAAALDAP_LDAP/useDNS=bool:{{ ovirt_engine_ldap_setup.useDNS | default('Yes') }}
+OVAAALDAP_LDAP/aaaProfileName=str:{{ ovirt_engine_ldap_setup.aaaProfileName }}
+OVAAALDAP_LDAP/serverset=str:{{ ovirt_engine_ldap_setup.serverset | default('single') }}
+OVAAALDAP_LDAP/protocol=str:{{ ovirt_engine_ldap_setup.protocol }}
+OVAAALDAP_LDAP/baseDN=str:{{ ovirt_engine_ldap_setup.baseDN }}
+OVAAALDAP_LDAP/hosts=str:{{ ovirt_engine_ldap_setup.hosts }}
+OVAAALDAP_LDAP/user=str:{{ ovirt_engine_ldap_setup.user }}
+OVAAALDAP_LDAP/password=str:{{ ovirt_engine_ldap_setup.password }}
+OVAAALDAP_LDAP/toolEnable=bool:{{ ovirt_engine_ldap_setup.toolEnable | default('False') }}
+OVAAALDAP_LDAP/configOverwrite=bool:{{ ovirt_engine_ldap_setup.configOverwrite | default('True')}}
+OVAAALDAP_LDAP/useVmSso=bool:{{ ovirt_engine_ldap_setup.useVmSso | default('False') }}
+QUESTION/1/OVAAALDAP_LDAP_CACERT_METHOD=str:{{ ovirt_engine_ldap_setup.cacert_method | default('insecure') }}
+{% if ovirt_engine_ldap_setup.cacert_method | default('insecure') == 'insecure' %}
+OVAAALDAP_LDAP/insecure=bool:True
+{% endif%}
+DIALOG/autoAcceptDefault=bool:{{ ovirt_engine_ldap_setup.autoAcceptDefault | default('True') }}

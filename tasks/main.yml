@@ -1,0 +1,27 @@
+---
+- when: ovirt_engine_ldap_setup is defined
+  block:
+  - name: Check pckg is installed
+    package:
+      name: ovirt-engine-extension-aaa-ldap-setup
+      state: present
+
+  - name: Create ldap config answer file
+    template:
+      src: "{{ ovirt_engine_ldap_setup_answer_j2 }}"
+      dest: /root/ovirt_engine_ldap_setup.conf
+    register: ovirt_engine_ldap_setup_answer
+
+  - name: Run ldap setup using answer file
+    command: >-
+      ovirt-engine-extension-aaa-ldap-setup
+      --config=/root/ovirt_engine_ldap_setup.conf
+    when: ovirt_engine_ldap_setup_answer is changed
+    notify: restart engine
+
+  - name: Add extra lines to profile
+    blockinfile:
+      dest: "/etc/ovirt-engine/aaa/{{ ovirt_engine_ldap_setup.aaaProfileName }}.properties"
+      content: "{{ ovirt_engine_ldap_setup_extra }}"
+    when: ovirt_engine_ldap_setup_extra is defined
+    notify: restart engine

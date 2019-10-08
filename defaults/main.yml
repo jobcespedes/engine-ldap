@@ -1,0 +1,23 @@
+---
+# Define an `ovirt_engine_ldap_setup` dictionary. For example:
+# ovirt_engine_ldap_setup:
+#   aaaProfileName: example.com
+#   profile: 389ds
+#   useDNS: False
+#   serverset: single
+#   protocol: ldaps
+#   hosts: example.com
+#   user: uid=user,ou=Special Users,dc=example,dc=com
+#   baseDN: cn=users,cn=accounts,dc=example,dc=com
+#   password: 123456
+#   toolEnable: False
+#   configOverwrite: True
+#   useVmSso: False
+#   cacert_method: insecure
+#   autoAcceptDefault: True
+
+# Add extra setup lines to profile with `ovirt_engine_ldap_setup_extra`
+# ovirt_engine_ldap_setup_extra: |-
+#   pool.default.auth.type = simple
+
+ovirt_engine_ldap_setup_answer_j2: ovirt_engine_ldap_setup.conf.j2
