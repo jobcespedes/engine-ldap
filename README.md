@@ -1,7 +1,7 @@
-Role Name: ovirt.engine-ldap
+Role Name: engine-ldap
 =========
 
-[![Build Status](https://travis-ci.org/jobcespedes/ovirt.engine-ldap.svg?branch=master)](https://travis-ci.org/jobcespedes/ansible_ovirt.engine-ldap) [![Buy me a coffee](https://img.shields.io/badge/$-BuyMeACoffee-blue.svg)](https://www.buymeacoffee.com/jobcespedes)
+[![Build Status](https://travis-ci.org/jobcespedes/engine-ldap.svg?branch=master)](https://travis-ci.org/jobcespedes/engine-ldap) [![Buy me a coffee](https://img.shields.io/badge/$-BuyMeACoffee-blue.svg)](https://www.buymeacoffee.com/jobcespedes)
 
 Configure ldap auth in oVirt Engine
 
@@ -28,7 +28,7 @@ Example Playbook
 ```yaml
 - hosts: engine
   roles:
-    - jobcespedes.ovirt.engine-ldap
+    - jobcespedes.engine-ldap
 ```
 
 License
