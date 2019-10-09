@@ -8,6 +8,7 @@ Configure ldap auth in oVirt Engine
 Requirements
 ------------
 
+- Root privileges
 - Engine installed
 - Package: `ovirt-engine-extension-aaa-ldap-setup`
 
