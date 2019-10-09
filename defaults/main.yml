@@ -16,8 +16,8 @@
 #   cacert_method: insecure
 #   autoAcceptDefault: True
 
-# Add extra setup lines to profile with `ovirt_engine_ldap_setup_extra`
-# ovirt_engine_ldap_setup_extra: |-
+# Add extra setup lines to profile with `ovirt_engine_ldap_setup_extra_aaa`
+# ovirt_engine_ldap_setup_extra_aaa: |-
 #   pool.default.auth.type = simple
 
 ovirt_engine_ldap_setup_answer_j2: ovirt_engine_ldap_setup.conf.j2

@@ -22,6 +22,6 @@
   - name: Add extra lines to profile
     blockinfile:
       dest: "/etc/ovirt-engine/aaa/{{ ovirt_engine_ldap_setup.aaaProfileName }}.properties"
-      content: "{{ ovirt_engine_ldap_setup_extra }}"
-    when: ovirt_engine_ldap_setup_extra is defined
+      content: "{{ ovirt_engine_ldap_setup_extra_aaa }}"
+    when: ovirt_engine_ldap_setup_extra_aaa is defined
     notify: restart engine
